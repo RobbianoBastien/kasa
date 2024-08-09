@@ -1,0 +1,23 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    &__navigation{
+        gap: 40px;
+        display: flex;
+        &__home{
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &__about{
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

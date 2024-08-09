@@ -1,0 +1,13 @@
+.footer{
+    padding-top: 50px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 150px;
+    &__txt{
+        color: white;
+    }
+}
