@@ -7,6 +7,7 @@ import Header from './Component/Header.jsx'
 import Home from './Page/Home.jsx'
 import NotFound from './Page/NotFound.jsx'
 import Footer from './Component/Footer.jsx'
+import Logement from './Page/Logement.jsx'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path='/logement/:id' element={<Logement/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer/>
