@@ -1,0 +1,15 @@
+.logements{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f6f6;
+    width: 90%;
+    max-width: 1240px;
+    border-radius: 25px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}

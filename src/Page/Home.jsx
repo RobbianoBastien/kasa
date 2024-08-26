@@ -2,6 +2,7 @@ import Data from "../assets/Data/data.json"
 import Banner from "../Component/Banner"
 import BannerImg from '../assets/image/Kassa-Banner.png'
 import Card from "../Component/Card"
+import "./Home.scss"
 
 function home() {
     return (<div>
@@ -9,6 +10,7 @@ function home() {
         img = {BannerImg}
         title='Chez vous, partout et ailleurs'
         />
+        <div className="logements">
         {Data.map((appartement) => (
             <Card 
             key={appartement.id}
@@ -17,6 +19,7 @@ function home() {
             img={appartement.cover}
             />
 ))}
+        </div>
     </div>)
 }
 

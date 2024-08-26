@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Card({title,img,appartementid}) {
     return(
-        <Link to={`/logement/${appartementid}`}>
-            <img src={img} alt="" />
-            <h2>{title}</h2>
+        <Link className='logement' to={`/logement/${appartementid}`}>
+            <img className='logement__img' src={img} alt="" />
+            <h2 className='logement__title'>{title}</h2>
         </Link>
 
     )
