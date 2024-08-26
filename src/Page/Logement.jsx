@@ -5,12 +5,21 @@ import {Navigate, useParams} from "react-router-dom"
 import Carrousel from  "../Component/Carrousel"
 import Host from "../Component/Host";
 import Rating from "../Component/Rating";
+import './Logement.scss'
+import NotFound from "./NotFound";
+import DropDown from "../Component/DropDown";
 
 function Logement() {
     let { id } = useParams();
     console.log(id)
 
     const FicheLogement = Data.find((logement) => logement.id === id);
+
+    if(FicheLogement == undefined){
+      return <NotFound />
+    }
+      
+    
 
     console.log(FicheLogement)
 
@@ -29,10 +38,12 @@ function Logement() {
     
 
 
-    return (<div>
+    return (<div className="logement">
         <Carrousel slides={FicheLogement?.pictures} />
+        <div className="logement_texte">
         <h2>{FicheLogement?.title}</h2>
         <span>{FicheLogement?.location}</span>
+        </div>
         <section>
             {TagsLogement}
         </section>
@@ -42,8 +53,14 @@ function Logement() {
         picture={FicheLogement?.host.picture}
         />   
         </section>
+        <Rating score={FicheLogement.rating}/>
         <section>
-        <Rating score={FicheLogement.rating} />
+          <div>
+            <DropDown/>
+          </div>
+          <div>
+
+          </div>
         </section>
     </div>)
 }

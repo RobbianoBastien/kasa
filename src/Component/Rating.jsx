@@ -1,6 +1,6 @@
 import React from 'react';
-import emptyStar from '../assets/image/Star-inactive.png';
-import fullStar from '../assets/image/star-active.png';
+import emptyStar from '../assets/image/StarInactive.png';
+import fullStar from '../assets/image/StarActive.png';
 
 
 function Rating(props) {
@@ -13,14 +13,14 @@ function Rating(props) {
             <img
               key={note.toString()}
               className="etoile"
-              src={emptyStar}
+              src={fullStar}
               alt="star"
             />
           ) : (
             <img
               key={note.toString()}
               className="etoile"
-              src={fullStar}
+              src={emptyStar}
               alt="star"
             />
           )

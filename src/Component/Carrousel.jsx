@@ -13,28 +13,27 @@ function Carrousel({ slides }) {
     return null;
   }
   return (
-    <section className="slide">
+    <section >
       {length > 1 && (
-        <p className="left__Arrow" onClick={prevImage}>
-          <i className="fa-solid fa-chevron-left"></i>
+        <p onClick={prevImage}>
+          <i></i>
         </p>
       )}
       {length > 1 && (
-        <p className="right__Arrow" onClick={nextImage}>
-          <i className="fa-solid fa-chevron-right"></i>
+        <p onClick={nextImage}>
+          <i></i>
         </p>
       )}
       {slides.map((image, index) => {
         return (
           <div
             key={index}
-            className={index === current ? "slider active" : "slider"}
           >
             {index === current && (
-              <img src={image} alt="img-appartement" className="slide__image" />
+              <img src={image} alt=""/>
             )}
             {index === current && length > 1 && (
-              <span className="slider__number">
+              <span>
                 {current + 1}/{length}
               </span>
             )}
