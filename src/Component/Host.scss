@@ -1,0 +1,16 @@
+.photo{
+    border-radius: 360px;
+    height: 64px;
+    width: 64px;
+}
+
+.nom{
+    color: #FF6060;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nom__containeur{
+    display: flex;
+    flex-direction: column;
+}

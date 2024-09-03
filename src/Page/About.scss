@@ -1,0 +1,29 @@
+
+.about{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 50px;
+    &__banner{
+        filter: brightness(150%); 
+        img{
+            position: relative;
+            width: unset;
+        } 
+    }
+    
+    
+    &__dropdown{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        width: 1024px;
+        &__size{
+            width: 1024px;
+        }
+        
+    }
+}

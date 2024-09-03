@@ -1,47 +1,93 @@
 import React, { useState } from "react";
+import arrowRight from "../assets/image/ArrowRigth.png"
+import arrowLeft from "../assets/image/ArrowLeft.png"
+import './Carrousel.scss'
 
 function Carrousel({ slides }) {
-  const [current, setCurrent] = useState(0); 
-  const nextImage = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1); 
-  };
-  const prevImage = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  const [index,setIndex] = useState(0);
+  let length = slides.length;
+  
+  function clickArrowLeft()  {
+      if (index === 0) {
+        setIndex (length - 1)
+      }
+      else {
+        setIndex(index - 1)
+      }
+      
+    }
 
-  if (!Array.isArray(slides) || slides.length <= 0) {
-    return null;
-  }
+    function clickArrowRigth()  {
+      if (index === length - 1) {
+        setIndex (0)
+      }
+      else {
+        setIndex(index + 1)
+      }
+      
+    }
+
+
+
   return (
-    <section >
-      {length > 1 && (
-        <p onClick={prevImage}>
-          <i></i>
-        </p>
-      )}
-      {length > 1 && (
-        <p onClick={nextImage}>
-          <i></i>
-        </p>
-      )}
-      {slides.map((image, index) => {
-        return (
-          <div
-            key={index}
-          >
-            {index === current && (
-              <img src={image} alt=""/>
-            )}
-            {index === current && length > 1 && (
-              <span>
-                {current + 1}/{length}
-              </span>
-            )}
-          </div>
-        );
-      })}
-    </section>
-  );
+    <>
+    <img src={slides[index]}/>
+    <img src={arrowRight} onClick={clickArrowRigth}/>
+    <img src={arrowLeft} onClick={clickArrowLeft}/>
+    <p>{index + 1}/{length}</p>
+    </>
+    
+  )
+    
 }
+
+let index=0
+
+
+function displaydots() {
+	for (let i = 0; i < slides.length; i++){
+		const dot = document.createElement ("div");
+		dot.classList.add("dot");
+		dots.appendChild(dot);
+		if ( i == index) {
+			dot.classList.add("dot_selected")
+		}
+	}
+}
+
+
+
+/* function clickarrowleft() {
+	arrowleft.addEventListener("click", () => {
+		newdots = document.querySelectorAll(".dot");
+		newdots[index].classList.remove("dot_selected");
+		console.log(index)
+		index --;
+		if (index < 0) {
+			index = slides.length - 1;
+		}
+		newdots[index].classList.add("dot_selected");
+		img.src = slides[index].image;
+		text.innerHTML = slides[index].tagLine;
+	})
+}
+
+
+
+function clickarrowright() {
+	arrowright.addEventListener("click", () => {
+		const newdots = document.querySelectorAll(".dot");
+		newdots[index].classList.remove("dot_selected");
+		index++;
+		if (index > slides.length - 1) {
+			index = 0;
+		}
+		newdots[index].classList.add("dot_selected");
+		img.src = slides[index].image;
+		text.innerHTML = slides[index].tagLine;
+	})
+} */
+
+
 
 export default Carrousel;

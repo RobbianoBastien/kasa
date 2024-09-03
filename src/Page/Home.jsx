@@ -6,10 +6,12 @@ import "./Home.scss"
 
 function home() {
     return (<div>
+        <div>
         <Banner 
         img = {BannerImg}
         title='Chez vous, partout et ailleurs'
         />
+        </div>
         <div className="logements">
         {Data.map((appartement) => (
             <Card 
