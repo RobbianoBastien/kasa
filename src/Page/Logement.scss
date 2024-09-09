@@ -4,11 +4,16 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    &__carrousel{
+        width: 100%;
+        max-width: 1240px;
+    }
     &__description{
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         max-width: 1240px;
         width: 100%;
+        gap: 20px;
         &__texte{
             h2{
                 color: #FF6060;
@@ -21,22 +26,28 @@
                 font-size: 18px;
             }
         }
-        &__profile{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-    }
-    &__pictogramme{
-        display: flex;
-        justify-content: space-between;
-        max-width: 1240px;
-        width: 100%;
         &__tags{
             display: flex;
             gap: 10px;
         }
+    }
+    &__content{
+        display: flex;
+        max-width: 1240px;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        &__profile{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+        &__stars{
+            display: flex;
+            justify-content: flex-end;
+        }
+
     }
     &__dropdown{
         display: flex;
@@ -52,5 +63,59 @@
             max-width: 500px;
             width: 100%;
         }
+    }
+}
+
+.logement__content__container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1240px;
+}
+
+@media (max-width: 1052px){
+    .logement{
+        gap: 20px;
+        &__carrousel{
+            width: 90%;
+        }
+        &__description{
+            &__texte{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                h2{
+                    font-size: 18px;
+                }
+                span{
+                    font-size: 14px;
+                }
+            }
+            &__tags{
+                flex-wrap: wrap;
+            }
+
+        }
+        &__content{
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+        &__dropdown{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 90%;
+            &__description{
+                max-width: none;
+            }
+            &__equipements{
+                max-width: none;
+            }
+        }
+    }
+    .logement__content__container{
+        flex-direction: column;
+        width: 90%;
     }
 }

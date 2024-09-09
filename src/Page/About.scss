@@ -7,9 +7,9 @@
     margin-bottom: 50px;
     &__banner{
         filter: brightness(150%); 
+        width: 100%;
         img{
             position: relative;
-            width: unset;
         } 
     }
     
@@ -22,8 +22,18 @@
         gap: 30px;
         width: 1024px;
         &__size{
-            width: 1024px;
+            width: 100%;
         }
         
+    }
+}
+
+@media(max-width: 1052px){
+    .about{
+        margin-bottom: 0px;
+        &__dropdown{
+            gap: 20px;
+            width: 90%;
+        }
     }
 }

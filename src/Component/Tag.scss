@@ -12,3 +12,11 @@
         font-weight: 700;
     }
 }
+
+@media(max-width: 1052px){
+    .tag{
+        &__button{
+            font-size: 10px;
+        }
+    }
+}

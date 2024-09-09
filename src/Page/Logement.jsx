@@ -43,28 +43,30 @@ function Logement() {
 
     return (<div className="logement">
         <div className="logement__carrousel">
-        <Carrousel slides={FicheLogement?.pictures} />
+          <Carrousel slides={FicheLogement?.pictures} />
         </div>
-        <div className="logement__description">
-        <section className="logement__description__texte">
-        <h2>{FicheLogement?.title}</h2>
-        <span>{FicheLogement?.location}</span>
-        </section>
-        <section className="logement__description__profile">
-        <Host 
-        firstname={firstname}
-        lastname={lastname}
-        picture={FicheLogement?.host.picture}
-        />   
-        </section>
-        </div>
-        <div className="logement__pictogramme">
-        <section className="logement__pictogramme__tags">
-            {TagsLogement}
-        </section>
-        <section className="logement__pictogramme__stars">
-        <Rating score={FicheLogement.rating}/>
-        </section>
+        <div className="logement__content__container">
+          <div className="logement__description">
+            <section className="logement__description__texte">
+              <h2>{FicheLogement?.title}</h2>
+              <span>{FicheLogement?.location}</span>
+            </section>
+            <section className="logement__description__tags">
+              {TagsLogement}
+            </section>
+          </div>
+          <div className="logement__content">
+            <section className="logement__content__profile">
+              <Host 
+              firstname={firstname}
+              lastname={lastname}
+              picture={FicheLogement?.host.picture}
+              />
+            </section> 
+            <section className="logement__content__stars">
+              <Rating score={FicheLogement.rating}/>
+            </section>
+          </div>
         </div>
         <section className="logement__dropdown">
           <div className="logement__dropdown__description">

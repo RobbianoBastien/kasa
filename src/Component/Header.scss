@@ -6,18 +6,39 @@
     padding: 20px;
     margin: auto;
     &__navigation{
-        gap: 40px;
+        gap: 20px;
         display: flex;
         &__home{
             text-decoration: none;
+            font-size: 24px;
+            color: black;
             &:hover{
                 text-decoration: underline;
             }
         }
         &__about{
             text-decoration: none;
+            font-size: 24px;
+            color: black;
             &:hover{
                 text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 1052px) {
+    .header{
+        margin-bottom: 10px;
+        &__logo{
+            width: 145px;
+        }
+        &__navigation{
+            &__home{
+                font-size: 12px;
+            }
+            &__about{
+                font-size: 12px;
             }
         }
     }
